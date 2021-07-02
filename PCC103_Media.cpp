@@ -23,7 +23,7 @@ int main () {
     srand(time(NULL));                                         // Utiliza o relógio interno do computador para escolher uma semente para gerar os números aleatórios.
 
     vector <double> vetor;
-    int n =10;                                                  // Tamanho do vector
+    int n =25;                                                  // Tamanho do vector
     int p;
 
     VetorAleatorio(vetor, n);                                                       // Chama função para gera vetor aleatório
@@ -128,7 +128,7 @@ double median(const std::vector<double>& data) {
 
 void VetorAleatorio (vector <double> &x, int tam) {
     for (int i=0; i<tam; i++){
-        x.push_back(rand() %50);
+        x.push_back(rand() %30);
     }
 }
 
@@ -145,11 +145,11 @@ void MostraVetor (vector <double> vetor) {
 
 double Particao (vector<double> &data, int ini, int fim){
 
-    int pivot = data[fim];    // pivot
-    int i = ini-1;  // Index of smaller element
+    int pivot = data[fim];                                                          // Define pivot como sendo o último elemento do vetor
+    int i = ini-1;
 
     for (int j = ini; j <= fim - 1; j++){
-        if (data[j] <= pivot){              // If current element is smaller than or equal to pivot
+        if (data[j] <= pivot){                                                      // Compara cada elemento do vetor com o pivot
             i++;
             swap(data[i], data[j]);
         }
