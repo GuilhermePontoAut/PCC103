@@ -32,17 +32,20 @@ int main (){
     MostraVetor(vetorA);
     MostraVetor(vetorB);
 
-    cout<< "\nA média do vetor A é igual a: " << mean(vetorA) << endl;
-    cout<< "A média do vetor B é igual a: " << mean(vetorB) << endl;
+    cout << "\n--------------------------------------------------";
+    cout<< "\n A média do vetor A é igual a: " << mean(vetorA) << endl;
+    cout<< " A média do vetor B é igual a: " << mean(vetorB) << endl;
 
-    cout<< "\nO desvio padrão do vetor A é igual a: " << std_dev(vetorA) << endl;
-    cout<< "O desvio padrão do vetor B é igual a: " << std_dev(vetorB) << endl;
+    cout<< "\n O desvio padrão do vetor A é igual a: " << std_dev(vetorA) << endl;
+    cout<< " O desvio padrão do vetor B é igual a: " << std_dev(vetorB) << endl;
 
     double n = (vetorA.size() + vetorB.size() - 2);
-    cout<< "\nO grau de liberdade é igual a: " << n << endl;
+    cout<< "\n O grau de liberdade é igual a: " << n << endl;
 
-    cout<< "\nA estatística T é igual a: " << EstatisticaT(vetorA, vetorB, n) << endl;
-
+    cout<< "\n A estatística T é igual a: " << EstatisticaT(vetorA, vetorB, n) << endl;
+    cout << "\--------------------------------------------------" << endl;;
+    cout << endl;
+    cout << endl;
 
 }
 
@@ -65,7 +68,7 @@ double EstatisticaT (vector <double> vetorA, vector <double> vetorB, double n){
 
 
 double mean(const std::vector<double> &data){
-    double media;
+    double media = 0;
     for (int i =0; i<data.size(); i++){
         media = media + data[i];
     }
@@ -75,7 +78,6 @@ double mean(const std::vector<double> &data){
 double std_dev(const vector<double> &data){
     double mu = mean(data);
     double desvio = 0;
-
 
     for (int i=0; i<data.size(); i++){
     desvio = desvio + pow((data[i] - mu),2);
